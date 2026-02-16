@@ -23,9 +23,7 @@ internal sealed class CompanyService : ICompanyService
         try
         {
             var companies = _repository.Company.GetAllCompanies(trackChanges);
-            var companiesDto = companies.Select(c =>
-            new CompanyDto(c.Id, c.Name ?? "", string.Join(' ', c.Address, c.Country)))
-                .ToList();
+            var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
             return companiesDto;
         }
         catch (Exception ex)
