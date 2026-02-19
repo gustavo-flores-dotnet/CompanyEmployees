@@ -126,8 +126,33 @@ Swagger provides:
   "sqlConnection": "YOUR_CONNECTION_STRING_HERE"
 }
 ```
-3. Apply migrations:
+### Apply existing migrations (recommended)
 
+This repository already includes EF Core migrations. To create/update the database schema, run:
+Visual Studio (Package Manager Console):
+```
+Update-Database
+```
+Run the API:
+```
+dotnet run
+```
+CLI:
+```
+dotnet ef database update --startup-project CompanyEmployees
+```
+If EF Core can’t locate the DbContext in your setup, specify the DbContext project as well:
+```
+dotnet ef database update --project <ProjectThatContainsRepositoryContext> --startup-project CompanyEmployees
+```
+Run the API:
+```
+dotnet run --project CompanyEmployees
+```
+
+---
+
+### Creating a new migration (only if you change the model)
 A) Visual Studio Package Manager Console
 1. Set Startup Project to: CompanyEmployees
 2. Open Tools → NuGet Package Manager → Package Manager Console
