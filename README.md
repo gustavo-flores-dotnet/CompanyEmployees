@@ -171,7 +171,7 @@ The API includes:
 - Global exception handling middleware
 - Consistent HTTP responses
 - Clean separation of error logic in the service layer
-- (Custom exception strategy can be described here if applicable.)
+  
 ---
 # Implemented Best Practices
 - DTO usage to avoid exposing domain entities
@@ -179,6 +179,8 @@ The API includes:
 - Repository abstraction over data access
 - trackChanges optimization in EF Core queries
 - Centralized IServiceManager for service coordination
+- Centralized IRepositoryManager for repositories coordination
+- Repository pattern logic for CRUD methods
 - Code First migrations
 - Attribute-based routing with route constraints
 
@@ -190,6 +192,7 @@ The API includes:
 - Swagger enables automatic API documentation.
 - Global middleware ensures consistent exception handling.
 - Dependency Injection ensures loose coupling between components.
+  
 ---
 # Future Improvements
 - Pagination support
@@ -198,6 +201,7 @@ The API includes:
 - Unit and integration testing
 - Caching strategies
 - API versioning
+- Deployment to IIS
 
 ---
 # Author
