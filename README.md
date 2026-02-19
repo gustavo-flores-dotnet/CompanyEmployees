@@ -42,6 +42,7 @@ The main goal of this project is to demonstrate solid knowledge of:
 # Architecture
 
 The project follows **Onion Architecture**, separating responsibilities into distinct layers:
+
 CompanyEmployees (Web API - Host)
 │
 ├── CompanyEmployees.Presentation
@@ -58,6 +59,7 @@ CompanyEmployees (Web API - Host)
 │
 └── CompanyEmployees.Contracts
 └── Interfaces
+
 ---
 ## Request Flow
 Controller
