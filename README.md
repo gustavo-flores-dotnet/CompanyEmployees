@@ -58,7 +58,7 @@ CompanyEmployees (Web API - Host)
 │
 └── CompanyEmployees.Contracts
 └── Interfaces
-
+---
 ## Request Flow
 Controller
 ↓
@@ -118,7 +118,7 @@ Run the application:
 dotnet run
 Open Swagger:
 https://localhost:5001/swagger
-
+---
 # Error Handling
 
 The API includes:
@@ -130,7 +130,7 @@ Consistent HTTP responses
 Clean separation of error logic in the service layer
 
 (Custom exception strategy can be described here if applicable.)
-
+---
 # Implemented Best Practices
 
 DTO usage to avoid exposing domain entities
@@ -146,7 +146,7 @@ Centralized IServiceManager for service coordination
 Code First migrations
 
 Attribute-based routing with route constraints
-
+---
 # Technical Decisions
 
 Onion Architecture was chosen to enforce separation of concerns and low coupling.
@@ -160,7 +160,7 @@ Swagger enables automatic API documentation.
 Global middleware ensures consistent exception handling.
 
 Dependency Injection ensures loose coupling between components.
-
+---
 # Future Improvements
 
 Pagination support
@@ -174,13 +174,13 @@ Unit and integration testing
 Caching strategies
 
 API versioning
-
+---
 # Author
 
 Gustavo Abraham Flores Galindo
 
 Backend Developer focused on ASP.NET Core, clean architecture, and scalable backend design.
-
+---
 ## 📖 Learning Context
 
 This project was built as part of my structured learning process while studying advanced ASP.NET Core architecture.
