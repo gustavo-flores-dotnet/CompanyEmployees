@@ -43,22 +43,24 @@ The main goal of this project is to demonstrate solid knowledge of:
 
 The project follows **Onion Architecture**, separating responsibilities into distinct layers:
 
+```markdown
+```text
 CompanyEmployees (Web API - Host)
 │
 ├── CompanyEmployees.Presentation
-│ └── Controllers
+│   └── Controllers
 │
 ├── CompanyEmployees.Service
-│ └── Business Logic
+│   └── Business Logic
 │
 ├── CompanyEmployees.Repository
-│ └── Data Access Layer
+│   └── Data Access Layer
 │
 ├── CompanyEmployees.Entities
-│ └── Domain Models
+│   └── Domain Models
 │
 └── CompanyEmployees.Contracts
-└── Interfaces
+    └── Interfaces
 
 ---
 ## Request Flow
