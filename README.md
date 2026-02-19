@@ -1,4 +1,4 @@
-# 🚀 CompanyEmployees API
+# CompanyEmployees API
 
 RESTful Web API built with **ASP.NET Core**, following **Onion Architecture** principles, implementing Repository and Service patterns, global exception handling, logging, and Swagger/OpenAPI documentation.
 
