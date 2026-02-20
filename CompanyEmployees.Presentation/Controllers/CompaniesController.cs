@@ -15,12 +15,12 @@ public class CompaniesController : ControllerBase
     }
 
     /// <summary>
-    /// Obtiene todas las compañías.
+    /// Gets all the companies.
     /// </summary>
     /// <remarks>
-    /// trackChanges = false para optimizar consultas de solo lectura.
+    /// trackChanges = false to optimize read-only queries.
     /// </remarks>
-    /// <response code="200">Lista de compañías.</response>
+    /// <response code="200">List of companies.</response>
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult GetCompanies()
@@ -30,11 +30,11 @@ public class CompaniesController : ControllerBase
     }
 
     /// <summary>
-    /// Obtiene una compañía por su id.
+    /// Get a company by its ID.
     /// </summary>
-    /// <param name="id">Id de la compañía (GUID).</param>
-    /// <response code="200">Compañía encontrada.</response>
-    /// <response code="404">No existe una compañía con ese id.</response>
+    /// <param name="id">Company ID (GUID).</param>
+    /// <response code="200">Company found.</response>
+    /// <response code="404">There is no company with that ID.</response>
     [HttpGet("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
