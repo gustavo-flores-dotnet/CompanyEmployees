@@ -15,7 +15,8 @@ public class CsvOutputFormatter : TextOutputFormatter
     }
     protected override bool CanWriteType(Type? type)
     {
-         if(typeof(CompanyDto).IsAssignableFrom(type) || typeof(IEnumerable<CompanyDto>).IsAssignableFrom(type)){
+         if(typeof(CompanyDto).IsAssignableFrom(type) || typeof(IEnumerable<CompanyDto>).IsAssignableFrom(type))
+        {
             return base.CanWriteType(type);
         }
         return false;
@@ -33,12 +34,12 @@ public class CsvOutputFormatter : TextOutputFormatter
         }
         else
         {
-            FormatCsv(buffer, (CompanyDto)context.Object);
+            FormatCsv(buffer, (CompanyDto?)context.Object);
         }
         await response.WriteAsync(buffer.ToString());
     }
-    private static void FormatCsv(StringBuilder buffer, CompanyDto company)
+    private static void FormatCsv(StringBuilder buffer, CompanyDto? company)
     {
-        buffer.AppendLine($"{company.Id},/{company.Name},/{company.FullAddress}");
+        buffer.AppendLine($"{company?.Id},/{company?.Name},/{company?.FullAddress}");
     }
 }
