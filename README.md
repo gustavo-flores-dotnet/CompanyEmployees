@@ -117,7 +117,7 @@ Swagger provides:
 ### Prerequisites:
 - .NET SDK (version: ___)
 - SQL Server / SQL Server Express
-- (Optional) Visual Studio 202/2026
+- (Optional) Visual Studio 2022/2026
   
 1. Clone the repository
 2. Configure the connection string inside `appsettings.json`
