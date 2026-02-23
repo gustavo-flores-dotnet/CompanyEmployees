@@ -36,12 +36,23 @@ public class EmployeesController : ControllerBase
     /// <param name="id">Employee ID (GUID).</param>
     /// <response code="200">Employee found.</response>
     /// <response code="404">The company or the employee does not exist.</response>
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id:guid}", Name = "GetEmployeeForCompany")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public IActionResult GetEmployeeForCompany(Guid companyId, Guid id)
     {
         var employee = _service.EmployeeService.GetEmployee(companyId, id, trackChanges: false);
         return Ok(employee);
+    }
+
+    [HttpPost]
+    public IActionResult CreateEmployeeForCompany(Guid companyId, [FromBody] EmployeeForCreationDto employee)
+    {
+        if (employee is null)
+            return BadRequest("EmployeeForCreation object is null");
+
+        var employeeToReturn = _service.EmployeeService.
+            CreateEmployeeForCompany(companyId, employee, trackChanges: false);
+        return CreatedAtRoute("GetEmployeeForCompany", new { companyId, id = employeeToReturn.Id }, employeeToReturn);
     }
 }

@@ -25,6 +25,7 @@ public class GlobalExceptionHandler : IExceptionHandler
             httpContext.Response.StatusCode = contextFeature.Error switch
             {
                 NotFoundException => StatusCodes.Status404NotFound,
+                BadRequestException => StatusCodes.Status400BadRequest,
                 _ => StatusCodes.Status500InternalServerError
             };
             _logger.LogError($"Something went wrong: {contextFeature.Error}");
